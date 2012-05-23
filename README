@@ -1,0 +1,45 @@
+Travel-NLP
+##########
+
+This project is a prototype for a travel portal.
+The idea is to find a start, target and time information
+in a given sentence of the german language. The project 
+is also part of the course Human-Computer Interaction 
+which is part of my study. 
+
+I use named entity recognition which is supported by the
+Apache OpenNLP library to make all this possible. 
+
+This project contains also a small REST service 
+which is implemented with the PlayMini framework.
+
+Quickstart:
+
+You need SBT 0.11.3.
+
+Linux: 
+
+$./sbt
+>run
+
+Windows:
+
+C:\..\nlp>sbt.bat
+
+Request:
+
+* http://localhost:9000/transform?sentence=Zeige mir morgen einen Weg von Schmalkalden nach Nürnberg.
+
+Response:
+
+{
+    "startPlaces": [
+        "Schmalkalden"
+    ],
+    "endPlace": [
+        "Nürnberg"
+    ],
+    "time": "morgen",
+    "numberOfDays": 1
+}
+
